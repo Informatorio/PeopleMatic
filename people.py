@@ -2,7 +2,6 @@
 
 import random
 import sqlite3
-import os 
 import string
 
 def ingreso_datos():  
@@ -68,7 +67,9 @@ def cerrar_conexion(conexion):
   conexion.close()
 
 def insertar_datos(alu,lug,archi):
-  import ipdb; ipdb.set_trace()
+  # Descomentar en caso de querer debuggear:
+#  import ipdb; ipdb.set_trace()
+
   #INGRESO DE ALUMNOS
   for i in range(len(alu)):
     argumentos = (alu[i][0],alu[i][1],alu[i][2],alu[i][3])  
@@ -137,7 +138,7 @@ def insertar_datos(alu,lug,archi):
         else: print("Ha ocurrido un error al guardar el registro.")
 
 
-ruta = "C:Sis_legajos\db.sqlite3" 
+ruta = "../db.sqlite3" 
 
 consulta,conexion = conectar(ruta)
 
